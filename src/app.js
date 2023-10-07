@@ -7,6 +7,7 @@ import __dirname from './utils.js';
 import viewsRouter from './routes/views.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 import productsRouter from './routes/products.router.js'
+import cartsRouter from './routes/carts.router.js'
 import passport from 'passport';
 import { initializePassport } from './config/passport.js';
 
@@ -41,6 +42,7 @@ app.use(passport.session());
 app.use('/', viewsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/products', productsRouter);
+app.use('/api/carts', cartsRouter);
 // catch all route
 app.get("*", (req, res) => {
     res.send('Error 404 - Not Found');
