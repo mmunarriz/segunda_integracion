@@ -42,7 +42,7 @@ app.use(passport.session());
 app.use('/', viewsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/products', productsRouter);
-app.use('/api/carts', cartsRouter);
+app.use('/carts', cartsRouter);
 // catch all route
 app.get("*", (req, res) => {
     res.send('Error 404 - Not Found');

@@ -52,6 +52,9 @@ http://localhost:8080/products
 Vista de perfil: (protegida)
 http://localhost:8080/profile
 
+Vista de current: (protegida)
+http://localhost:8080/current
+
 NOTA: si el usuario ya está logueado, no puede volver a loguearse o registrarse.
 En ambos casos el usuario es redirigido a la vista de perfil.
 

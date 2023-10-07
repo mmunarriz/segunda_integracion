@@ -47,4 +47,13 @@ router.get('/githubCallback', passport.authenticate('github', { failureRedirect:
     res.redirect('/products')
 })
 
+router.get('/current', passport.authenticate('login'), (req, res) => {
+    if (req.isAuthenticated()) {
+        res.status(200).json({ status: "success", payload: req.session.user });
+    } else {
+        res.status(401).json({ status: "error", error: "No hay sesión de usuario actual" });
+    }
+});
+
+
 export default router;

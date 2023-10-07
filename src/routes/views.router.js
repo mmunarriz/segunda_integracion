@@ -59,4 +59,11 @@ router.get('/products', requireAuth, async (req, res) => {
     });
 })
 
+// Ruta requiere estar autenticado
+router.get('/current', requireAuth, (req, res) => {
+    res.render('current', {
+        user: req.session.user
+    });
+})
+
 export default router;
