@@ -12,7 +12,7 @@ router.post('/login', passport.authenticate('login', { failureRedirect: '/failLo
     req.session.user = {
         name: `${req.user.first_name} ${req.user.last_name}`,
         email: req.user.email,
-        rol: req.user.user_type
+        rol: req.user.role
     }
     res.send({ status: "success", payload: req.session.user })
 })
@@ -41,7 +41,7 @@ router.get('/githubCallback', passport.authenticate('github', { failureRedirect:
     req.session.user = {
         name: `${req.user.email} - Github`,
         email: `${req.user.email} - (username)`,
-        rol: req.user.user_type
+        rol: req.user.role
     }
 
     res.redirect('/products')

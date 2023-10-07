@@ -37,7 +37,7 @@ export const initializePassport = () => {
                     first_name: "Admin",
                     last_name: "Coderhouse",
                     email: email,
-                    user_type: "admin"
+                    role: "admin"
                 };
                 return done(null, user);
             }
@@ -65,7 +65,7 @@ export const initializePassport = () => {
             console.log(profile);
             let user = await userModel.findOne({ email: profile.username })
             if (!user) {
-                let newUser = { email: profile.username, password: " ", user_type: "github_user" }
+                let newUser = { email: profile.username, password: " ", role: "github_user" }
                 let result = await userModel.create(newUser);
                 return done(null, result);
             }
