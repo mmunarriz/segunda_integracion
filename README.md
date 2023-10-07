@@ -3,6 +3,7 @@
 Aspectos a incluir:
 
 - Crear un modelo User el cual contará con los campos:
+
   first_name:String,
 
   last_name:String,
