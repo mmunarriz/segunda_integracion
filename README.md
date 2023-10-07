@@ -1,4 +1,4 @@
-# Implementación de login:
+# Segunda práctica integradora:
 
 Aspectos a incluir:
 
